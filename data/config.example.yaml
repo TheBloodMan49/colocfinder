@@ -1,0 +1,31 @@
+# Configuration file for colocfinder
+# All settings can also be set via environment variables (prefered method for Docker):
+#
+# Environment Variables:
+#   DISCORD_TOKEN                - Discord bot token
+#   CHANNEL_ID                   - Main channel ID for all posts
+#   INTERESTING_CHANNEL_ID       - Channel ID for interesting posts
+#   CHECK_INTERVAL_SECONDS       - How often to check for new listings
+#   CITIES                       - Comma-separated list of cities (e.g., "Paris,Lyon,Marseille")
+#   TRACING_LEVEL                - Logging level (trace, debug, info, warn, error)
+#   USER_AGENT                   - HTTP User-Agent string
+#   REQUEST_DELAY_MS             - Delay between requests in milliseconds
+#   MAX_LISTING_AGE_MINUTES      - Only show listings from last X minutes
+#   MIN_ROOMS                    - Minimum number of rooms
+#
+# Environment variables take precedence over config file values.
+
+discord_token: YOUR_DISCORD_BOT_TOKEN
+channel_id: 0
+interesting_channel_id: 0
+check_interval_seconds: 300
+tracing_level: info  # Options: trace, debug, info, warn, error
+user_agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+request_delay_ms: 2000  # Delay between requests in milliseconds
+max_listing_age_minutes: 1440  # Only show listings from last X minutes (1440 = 24 hours, 60 = 1 hour, 10 = 10 minutes)
+min_rooms: 2  # Minimum number of rooms (e.g., 2 for T2/2 pièces or more)
+cities:
+  - Paris
+  - Lyon
+  - Marseille
+  # Supported cities with coordinates: Rennes, Paris, Lyon, Marseille, Toulouse, Nice, Nantes, Bordeaux, Lille, Strasbourg

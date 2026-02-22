@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  colocfinder:
+    build: .
+    restart: unless-stopped
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - CHANNEL_ID=${CHANNEL_ID}
+      - INTERESTING_CHANNEL_ID=${INTERESTING_CHANNEL_ID}
+      - CHECK_INTERVAL_SECONDS=${CHECK_INTERVAL_SECONDS:-300}
+      - CITIES=${CITIES:-Rennes}
+      - TRACING_LEVEL=${TRACING_LEVEL:-info}
+      - USER_AGENT=${USER_AGENT:-Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36}
+      - REQUEST_DELAY_MS=${REQUEST_DELAY_MS:-2000}
+      - MAX_LISTING_AGE_MINUTES=${MAX_LISTING_AGE_MINUTES:-1440}
+      - MIN_ROOMS=${MIN_ROOMS:-2}
+    volumes:
+      - ./data:/app/data
+

@@ -1,0 +1,14 @@
+target/
+*.html
+
+# Data directory (contains config files with tokens and runtime data)
+data/*
+!data/.gitkeep
+!data/config.example.yaml
+
+.env
+
+# IDE
+.idea/
+.vscode/
+
